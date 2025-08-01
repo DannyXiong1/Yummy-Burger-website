@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart | Yummy Burger</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+
+        <img src="Images/YummyBurgerLogo.jpeg" alt="Yummy Burger Logo" id="logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="products.html">Menu</a></li>
+                <li><a href="customer-service.html">Customer Service</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Shopping Cart</h2>
+        <div id="cart-items">
+            <!-- Cart items will be dynamically inserted here by cart.js -->
+        </div>
+        <div id="cart-total">
+            <!-- Total price will be calculated and displayed here by cart.js -->
+        </div>
+        <button id="checkout">Checkout</button>
+        <script>
+            document.getElementById('checkout').addEventListener('click', function () {
+                window.location.href = 'checkout.html';
+            });
+        </script>
+    </main>
+    <footer>
+        <p class="footer-text">Yummy Burger</p>
+    </footer>
+    <script src="cart.js"></script>
+</body>
+
+</html>

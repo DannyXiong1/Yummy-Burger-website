@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <img src="Images/YummyBurgerLogo.jpeg" alt="Yummy Burger Logo" id="logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="customer-service.html">Customer Service</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="customer-service">
+            <h2>Checkout</h2>
+            <br>
+            <form id="customer-service-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="address">Address</label>
+                    <input type="text" id="address" name="address" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="credit-card">Credit Card Number</label>
+                    <input type="text" id="credit-card" name="credit-card" required>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p class="footer-text">Yummy Burger</p>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('customer-service-form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            var formData = {
+                firstName: document.getElementById('name').value,
+                address: document.getElementById('address').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value,
+                creditCard: document.getElementById('credit-card').value
+            };
+
+            // Save form data to localStorage
+            for (var key in formData) {
+                localStorage.setItem(key, formData[key]);
+            }
+
+            // Redirect to confirmation.html
+            window.location.href = 'confirmation.html';
+        });
+    </script>
+    <script>
+        // existing script for form submission
+
+        function generateConfirmationNumber(length) {
+            var result = '';
+            var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+            var charactersLength = characters.length;
+            for (var i = 0; i < length; i++) {
+                result += characters.charAt(Math.floor(Math.random() * charactersLength));
+            }
+            return result;
+        }
+
+        // Generate and store the confirmation number when the form is submitted
+        document.getElementById('customer-service-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            // Existing form submission logic 
+
+            var confirmationNumber = generateConfirmationNumber(10); // Generate a 10-character string
+            localStorage.setItem('confirmationNumber', confirmationNumber);
+
+            window.location.href = 'confirmation.html';
+        });
+    </script>
+</body>
+
+</html>

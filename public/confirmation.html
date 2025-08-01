@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation | Yummy Burger</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+
+        <img src="Images/YummyBurgerLogo.jpeg" alt="Yummy Burger Logo" id="logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="products.html">Menu</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Thank you for shopping with us!</h1>
+        <p>Your order has been placed successfully.</p>
+
+        <section class="order-details">
+            <h2>Order Details</h2>
+            <p><strong>Confirmation Number:</strong> <span id="order-confirmation-number"></span></p>
+            <p><strong>Name:</strong> <span id="order-name"></span></p>
+            <p><strong>Address:</strong> <span id="order-address"></span></p>
+            <p><strong>Phone Number:</strong> <span id="order-phone"></span></p>
+            <p><strong>Email:</strong> <span id="order-email"></span></p>
+            <p><strong>Credit Card Number:</strong> <span id="order-credit-card"></span></p>
+        </section>
+        <p>If you have any questions or concerns about your order, please <a href="customer-Service.html">contact
+                customer service</a>.</p>
+        <a href="products.html">Continue Shopping</a>
+    </main>
+</body>
+<script>
+    window.onload = function () {
+        // Retrieve and display general order details from localStorage
+        document.getElementById('order-name').textContent = localStorage.getItem('firstName') || 'N/A';
+        document.getElementById('order-address').textContent = localStorage.getItem('address') || 'N/A';
+        document.getElementById('order-phone').textContent = localStorage.getItem('phone') || 'N/A';
+        document.getElementById('order-email').textContent = localStorage.getItem('email') || 'N/A';
+
+        // Retrieve and display the last four digits of the credit card
+        var fullCreditCardNumber = localStorage.getItem('creditCard') || '';
+        var lastFourDigits = fullCreditCardNumber.slice(-4);
+        document.getElementById('order-credit-card').textContent = '**** **** **** ' + lastFourDigits;
+
+        // Display the stored confirmation number
+        document.getElementById('order-confirmation-number').textContent = localStorage.getItem('confirmationNumber') || 'N/A';
+    };
+</script>
+
+</html>

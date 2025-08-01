@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Service | Yummy Burger</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+
+        <img src="Images/YummyBurgerLogo.jpeg" alt="Yummy Burger Logo" id="logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="products.html">Menu</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="customer-service">
+            <h2>Customer Service</h2>
+            <br>
+            <br>
+            <form id="customer-service-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Customer Inquiries/Product Questions</label>
+                    <textarea id="message" name="message" rows="10" required></textarea>
+                </div>
+                <button type="submit">Submit</button>
+                <script>
+                    document.getElementById('customer-service-form').addEventListener('submit', function () {
+                        event.preventDefault();
+                        window.location.href = 'thank-you.html';
+                    });
+                </script>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p class="footer-text">Yummy Burger</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

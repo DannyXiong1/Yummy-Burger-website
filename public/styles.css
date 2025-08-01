@@ -1,0 +1,496 @@
+/* Styles for Yummy Burger */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+#logo {
+    max-height: 100px;
+    max-width: 100%;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.image-container {
+    position: relative;
+    text-align: center;
+}
+
+#main-image {
+    width: 100%;
+    height: auto;
+}
+
+.image-text {
+    position: auto;
+    text-align: left;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 2em;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.image-text-link {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-decoration: none;
+    color: inherit;
+    background-color: inherit;
+}
+
+#category-images {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+#category-images .category-image-container {
+    position: relative;
+    display: inline-block;
+}
+
+#category-images .category-image-container img {
+    width: 100%;
+    display: block;
+}
+
+#category-images .category-image-container .hover-text {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+#category-images .category-image-container:hover .hover-text {
+    opacity: 1;
+}
+
+footer {
+    margin-top: 20px;
+    padding: 100px;
+    background-color: #ff0000;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    #category-images {
+        flex-direction: column;
+    }
+
+    #category-images .category-image-container {
+        width: 100%;
+    }
+
+    #category-images .category-image-container img {
+        width: 100%;
+        margin: 10px 0;
+    } */
+
+    .image-text {
+        font-size: 1.5em;
+    }
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.product-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+}
+
+.product-info {
+    padding: 10px;
+}
+
+.product-description,
+.product-pricing {
+    margin-bottom: 10px;
+}
+
+.add-to-cart {
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.add-to-cart:hover {
+    background-color: #000000;
+}
+
+.customer-service {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="tel"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.form-group-inline {
+    display: inline-block;
+    width: calc(50% - 10px);
+    margin-right: 10px;
+}
+
+.form-group-inline:last-child {
+    margin-right: 0;
+}
+
+button[type="submit"] {
+    background-color: #ff0000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #000000;
+}
+
+@media (max-width: 768px) {
+    .form-group-inline {
+        display: block;
+        width: calc(100% - 22px);
+        margin-right: 0;
+    }
+}
+
+.cart-item {
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.cart-item p {
+    margin: 5px 0;
+}
+
+.cart-item input[type="number"] {
+    width: 50px;
+}
+
+#cart-total {
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+#checkout {
+    background-color: #ff0000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+#checkout:hover {
+    background-color: #000000;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    background: #FFFFFF;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.cart-item img {
+    width: 80px;
+    height: auto;
+    margin-right: 1rem;
+}
+
+.cart-item-description {
+    flex-grow: 1;
+}
+
+.cart-item-quantity {
+    width: 50px;
+}
+
+.cart-item-quantity input {
+    width: 100%;
+    padding: 5px;
+}
+
+.cart-item-subtotal,
+.cart-item p {
+    margin: 0 1rem;
+}
+
+.cart-item button {
+    background: #FF0000;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.cart-item button:hover {
+    background: #000000;
+}
+
+#cart-total {
+    margin-top: 1rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+#checkout {
+    background-color: #ff0000;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    margin-top: 1rem;
+    cursor: pointer;
+    width: auto;
+    border-radius: 5px;
+}
+
+#checkout:hover {
+    background-color: #000000;
+}
+
+@media (max-width: 768px) {
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cart-item img {
+        margin-bottom: 1rem;
+    }
+
+    .cart-item-quantity input,
+    .cart-item button {
+        width: auto;
+    }
+
+    #checkout {
+        width: auto;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #fff;
+    line-height: 1.6;
+}
+
+.mission-statement {
+    align-items: baseline;
+    padding: 2rem;
+    background: #f4f4f4;
+}
+
+.team-members {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 2rem;
+}
+
+.member {
+    flex-basis: 20%;
+    text-align: center;
+    margin: 1rem;
+    margin-bottom: 20px;
+}
+
+.photo-placeholder {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ddd;
+    border-radius: 50%;
+    margin: auto;
+}
+
+.photo-placeholder img {
+    width: 200px;
+    height: 200px;
+    min-height: 100%;
+    object-fit: cover;
+}
+
+@media(max-width: 700px) {
+    .team-members {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .member {
+        flex-basis: 80%;
+    }
+}
+
+.footer-text {
+    color: white;
+}
+
+header {
+    background: #ff0000; /* Red background */
+    color: #fff; /* White text */
+    padding: 1rem; /* Space inside the header */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+header img {
+    max-height: 100px; /* Adjust logo size */
+    margin-right: 1rem;
+}
+
+header nav {
+    flex-grow: 1;
+    text-align: center; /* Center navigation items within its space */
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-flex; /* Inline navigation items */
+    gap: 1rem; /* Space between links */
+    justify-content: center; /* Ensure links are centered */
+}
+
+header nav ul li a {
+    text-decoration: none; /* Remove underline */
+    color: #fff; /* White text */
+    font-size: 1.2rem; /* Adjust font size */
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+    }
+    header nav {
+        order: 2;
+        width: 100%;
+        text-align: center;
+    }
+    header nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    header img {
+        margin: 0 auto;
+    }
+}
+
+body {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+#category-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+@media (max-width: 768px) {
+    #category-images {
+        grid-template-columns: 1fr;
+    }
+}
+
+main {
+    padding: 0;
+}
+
+.image-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden; 
+}
